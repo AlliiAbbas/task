@@ -1,6 +1,6 @@
 <template>
   <employees-list />
-  <display-employees v-if="data !== null" :payload="data"/>
+  <display-employees v-if="data !== null" :payload="[data]"/>
 </template>
 
 
