@@ -1,13 +1,16 @@
 <template>
-  <EmployeesData />
+  <employees-list />
+  <display-employees/>
 </template>
 
 <script>
-import EmployeesData from './components/EmployeesData.vue'
+import EmployeesList from './components/EmployeesList.vue'
+import DisplayEmployees from "@/components/DisplayEmployees.vue";
 
 export default {
   components: {
-    EmployeesData
+    DisplayEmployees,
+    EmployeesList
   }
 }
 </script>
