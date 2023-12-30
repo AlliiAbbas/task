@@ -30,7 +30,7 @@ export default {
         position:'Junior',
         department:'Back-End',
         email:'Ziad@test.com',
-        image_url:'https://img.freepik.com/free-photo/businessman-with-his-arms-crossed-white-background_1368-6001.jpg?w=826&t=st=1703897117~exp=1703897717~hmac=d254e6490c6940d85be549982c601f1c7e02e10a084a616e3d420900b12a7160',
+        image_url:'https://img.freepik.com/free-photo/businessman-giving-handshake_186202-42.jpg?w=740&t=st=1703904518~exp=1703905118~hmac=7d960e1ef667dad14fd780dd7c3b85f09feae0621bc7ce73f92642ff78e34318',
       },
 
       {
@@ -72,7 +72,9 @@ export default {
     },
     selectEmployee(e){
       this.handleActive(e)
-
+      this.$store.dispatch('selectedEmployee' , e).then(()=>{
+        this.$router.push({ name: "Employee", params: { id: e.id } });
+      })
     }
   }
 }
