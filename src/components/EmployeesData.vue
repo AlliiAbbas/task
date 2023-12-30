@@ -1,6 +1,10 @@
 <template>
   <div>
-
+    <ul class="w-full grid grid-cols-10 bg-gray-200 p-4">
+      <li v-for="employee in employees_data" :key="employee.id" :id="employee.id" class="col-span-12 md:col-span-2 text-center  mx-2 p-2 text-gray-600 font-bold rounded cursor-pointer hover:bg-gray-300 hover:text-black" @click="selectEmployee(employee)" >
+        {{ employee.name }}
+      </li>
+    </ul>
   </div>
 </template>
 
@@ -56,7 +60,28 @@ export default {
         image_url:'https://img.freepik.com/free-photo/handsome-businessman-offering-handshake_144627-28925.jpg?w=740&t=st=1703897360~exp=1703897960~hmac=6cb2ec0cc54fd942cb6cf70336517d477a3b4aa30bb0fd3dba0cb8ccfc62bc32',
       }
     ]
-  })
+  }),
+  methods:{
+    handleActive(e){
+      let elements = document.querySelectorAll('li');
+      elements.forEach(element => {
+        element.classList.remove('active');
+      });
+      let ele = document.getElementById(e.id)
+      ele.classList.add('active')
+    },
+    selectEmployee(e){
+      this.handleActive(e)
+
+    }
+  }
 }
 </script>
+
+<style>
+.active{
+  background-color: #424242;
+  color: white !important;
+}
+</style>
 
