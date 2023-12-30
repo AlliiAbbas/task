@@ -1,17 +1,13 @@
 <template>
-  <employees-list />
-  <display-employees/>
+  <div id="app">
+    <router-view />
+  </div>
 </template>
 
 <script>
-import EmployeesList from './components/EmployeesList.vue'
-import DisplayEmployees from "@/components/DisplayEmployees.vue";
 
 export default {
-  components: {
-    DisplayEmployees,
-    EmployeesList
-  }
+
 }
 </script>
 
